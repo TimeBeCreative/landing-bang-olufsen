@@ -1,0 +1,17 @@
+.l-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    &--debug {
+        position: relative;
+        &::before {
+            --col: calc((100% - (var(--grid-columns) - 1) * var(--grid-gap)) / var(--grid-columns));
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 100;
+            pointer-events: none;
+            background: repeating-linear-gradient( to right, rgb(255 0 0 / 12%) 0 var(--col), transparent var(--col) calc(var(--col) + var(--grid-gap)));
+        }
+    }
+}
