@@ -1,15 +1,50 @@
 {
-  "extends": ["stylelint-config-standard-scss"],
-  "rules": {
-    "selector-class-pattern": [
-      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
-      {
-        "resolveNestedSelectors": true,
-        "message": "Клас має відповідати БЕМ: block_element--modifier"
-      }
-    ],
-    "max-nesting-depth": 3,
-    "selector-max-id": 0,
-    "declaration-no-important": true
-  }
+    "extends": ["stylelint-config-standard-scss"],
+    "rules": {
+        "selector-class-pattern": [
+            "^(?:l-|is-|has-)?[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?(?:--[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?$",
+            { "resolveNestedSelectors": true, "message": "Очікується BEM: block, block__element, block--modifier" }
+        ],
+        "selector-max-id": 0,
+        "selector-max-compound-selectors": 3,
+        "declaration-no-important": true,
+        "max-nesting-depth": [3, { "ignoreAtRules": ["include", "media", "supports"] }]
+    },
+    "overrides": [{
+            "files": ["src/styles/base/**/*.scss"],
+            "rules": { "selector-max-class": 0 }
+        },
+        {
+            "files": ["src/styles/layout/**/*.scss"],
+            "rules": {
+                "selector-max-type": 0,
+                "selector-class-pattern": [
+                    "^l-[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?(?:--[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?$",
+                    { "resolveNestedSelectors": true, "message": "layout: префікс l-" }
+                ]
+            }
+        },
+        {
+            "files": ["src/styles/modules/**/*.scss"],
+            "rules": {
+                "selector-max-type": 0,
+                "selector-class-pattern": [
+                    "^(?!l-)(?:[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?(?:--[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?|(?:is|has)-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+                    { "resolveNestedSelectors": true, "message": "modules: BEM без префікса l-; допускаються лише is-/has- стани" }
+                ]
+            }
+        },
+        {
+            "files": ["src/styles/state/**/*.scss"],
+            "rules": {
+                "selector-max-type": 0,
+                "selector-class-pattern": [
+                    "^(?:is|has)-[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    { "message": "state: префікс is- / has-" }
+                ]
+            }
+        }
+    ]
+
+
 }
