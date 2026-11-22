@@ -1,18 +1,20 @@
 @use 'sass:map';
 @use 'tokens' as *;
+
 @mixin mq($tier) {
-    $min: map.get($breakpoints, $tier);
-    @if $min==null {
-        @error 'Unknown breakpoint `#{$tier}`. Available: #{map.keys($breakpoints)}';
-    }
-    @media (min-width: $min) {
-        @content;
-    }
+  $min: map.get($breakpoints, $tier);
+
+  @if not $min {
+    @error 'Unknown breakpoint `#{$tier}`. Available: #{map.keys($breakpoints)}';
+  }
+
+  @media (min-width: $min) {
+    @content;
+  }
 }
 
 @mixin emit-tokens($tokens, $prefix: '') {
-    @each $name,
-    $value in $tokens {
-        --#{$prefix}#{$name}: #{$value};
-    }
+  @each $name, $value in $tokens {
+    --#{$prefix}#{$name}: #{$value};
+  }
 }

@@ -1,12 +1,12 @@
 body {
-    font-family: var(--font-primary);
-    font-size: var(--fs-text);
-    font-weight: var(--fw-regular);
-    line-height: var(--lh-text);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-primary);
+  font-size: var(--fs-text);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-text);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -15,10 +15,10 @@ h3,
 h4,
 h5,
 h6 {
-    font: inherit;
+  font: inherit;
 }
 
 strong,
 b {
-    font-weight: var(--fw-bold);
+  font-weight: var(--fw-bold);
 }

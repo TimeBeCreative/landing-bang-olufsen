@@ -1,19 +1,22 @@
 @use 'sass:map';
 @use '../abstracts' as *;
+
 :root {
-    @include emit-tokens($colors, 'color-');
-    @include emit-tokens($tokens-static);
-    @include emit-tokens(map.get($tiers, 'base'));
-    @include mq('tablet') {
-        @include emit-tokens(map.get($tiers, 'tablet'));
-    }
-    @include mq('desktop') {
-        @include emit-tokens(map.get($tiers, 'desktop'));
-    }
+  @include emit-tokens($colors, 'color-');
+  @include emit-tokens($tokens-static);
+  @include emit-tokens(map.get($tiers, 'base'));
+
+  @include mq('tablet') {
+    @include emit-tokens(map.get($tiers, 'tablet'));
+  }
+
+  @include mq('desktop') {
+    @include emit-tokens(map.get($tiers, 'desktop'));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-     :root {
-        --duration: 0s;
-    }
+  :root {
+    --duration: 0s;
+  }
 }
