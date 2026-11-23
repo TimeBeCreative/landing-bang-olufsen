@@ -4,7 +4,7 @@
 
 * **Варіант:** №1 (студентка №16) — макет **Bang & Olufsen** (`v2 B&O`), методологія **BEM + SMACSS**
 * **Макет Figma:** [Bang & Olufsen (`v2 B&O`)](https://www.figma.com/design/xIVUXiPZ3hdpEFiIC0qbTL/BOSE-New-Version?node-id=6817-432&t=tAUceb5DWq1YiU9g-0)
-* **Демо (GitHub Pages):** [https://TimeBeCreative.github.io/landing-bang-olufsen/](https://<TimeBeCreative>.github.io/landing-bang-olufsen/)
+* **Демо (GitHub Pages):** [https://timebecreative.github.io/landing-bang-olufsen/](https://timebecreative.github.io/landing-bang-olufsen/)
 
 ---
 
