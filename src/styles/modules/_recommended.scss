@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.recommended {
+  padding-top: var(--space-intro);
+
+  &__title {
+    margin-bottom: var(--space-title);
+  }
+
+  &__list {
+    row-gap: var(--space-row);
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include mq('desktop') {
+      grid-column: span 4;
+    }
+  }
+}

@@ -1,58 +1,73 @@
 @use '../abstracts' as *;
+
 .menu {
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    overflow-y: auto;
-    background-color: var(--color-surface);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100%);
-    transition: opacity var(--duration) var(--easing), transform var(--duration) var(--easing), visibility 0s linear var(--duration);
-    &:target {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-        transition: opacity var(--duration) var(--easing), transform var(--duration) var(--easing), visibility 0s;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition:
+    opacity var(--duration) var(--easing),
+    transform var(--duration) var(--easing),
+    visibility 0s linear var(--duration);
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition:
+      opacity var(--duration) var(--easing),
+      transform var(--duration) var(--easing),
+      visibility 0s;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-bottom: 40px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+  }
+
+  &__nav {
+    margin-top: 32px;
+
+    @include mq('tablet') {
+      margin-top: 56px;
     }
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        min-height: 100%;
-        padding-bottom: 40px;
-    }
-    &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: var(--header-height);
-    }
-    &__nav {
-        margin-top: 32px;
-        @include mq('tablet') {
-            margin-top: 56px;
-        }
-    }
-    &__contacts {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        margin-top: 48px;
-    }
-    &__phone {
-        font-size: var(--fs-caps);
-        font-weight: var(--fw-bold);
-        line-height: var(--lh-caps);
-        letter-spacing: var(--ls-caps);
-    }
-    &__call-link {
-        padding-bottom: 4px;
-        font-size: var(--fs-phone);
-        font-weight: var(--fw-bold);
-        line-height: var(--lh-phone);
-        letter-spacing: var(--ls-caps);
-        text-transform: uppercase;
-        border-bottom: 1px solid currentColor;
-    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  &__phone {
+    font-size: var(--fs-caps);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-caps);
+    letter-spacing: var(--ls-caps);
+  }
+
+  &__call-link {
+    padding-bottom: 4px;
+    font-size: var(--fs-phone);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-phone);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    border-bottom: 1px solid currentcolor;
+  }
 }

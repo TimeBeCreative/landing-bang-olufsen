@@ -1,11 +1,23 @@
 section.hero
   picture.hero__media
+    source(
+      type='image/avif',
+      srcset='/src/assets/images/hero-desktop-400.avif 400w, /src/assets/images/hero-desktop-800.avif 800w',
+      sizes='100vw'
+    )
+    source(
+      type='image/webp',
+      srcset='/src/assets/images/hero-desktop-400.webp 400w, /src/assets/images/hero-desktop-800.webp 800w',
+      sizes='100vw'
+    )
     img.hero__img(
-      src='/src/assets/images/hero-desktop.jpg'
-      alt='Bang & Olufsen Beosound speaker in a modern interior'
-      width='1260'
-      height='720'
-      fetchpriority='high'
+      src='/src/assets/images/hero-desktop.jpg',
+      srcset='/src/assets/images/hero-desktop-400.jpg 400w, /src/assets/images/hero-desktop-800.jpg 800w',
+      sizes='100vw',
+      alt='Bang & Olufsen Beosound speaker in a modern interior',
+      width='1260',
+      height='720',
+      fetchpriority='high',
       decoding='async'
     )
 

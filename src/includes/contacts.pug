@@ -1,0 +1,57 @@
+section#contacts.contacts
+  .l-container
+    h2.section-title.contacts__title Contact us
+
+    .l-grid
+      form.contact-form.contacts__form(action='#contacts', method='get')
+        .field
+          label.is-visually-hidden(for='contact-name') Name
+          input#contact-name.field__control(
+            type='text',
+            name='name',
+            placeholder='Name',
+            autocomplete='name',
+            required
+          )
+
+        .field
+          label.is-visually-hidden(for='contact-email') Email
+          input#contact-email.field__control(
+            type='email',
+            name='email',
+            placeholder='Email',
+            autocomplete='email',
+            required
+          )
+
+        .field
+          label.is-visually-hidden(for='contact-message') Message
+          textarea#contact-message.field__control.field__control--textarea(
+            name='message',
+            placeholder='Message',
+            required
+          )
+
+        button.button.button--dark.contact-form__submit(type='submit') Send
+
+      address.contacts__info
+        .contacts__group
+          p.contacts__label Phone
+          a.contacts__value(href=siteData.phoneHref)= siteData.phoneDisplay
+
+        .contacts__group
+          p.contacts__label Email
+          a.contacts__value(href=`mailto:${siteData.email}`)= siteData.email
+
+        .contacts__group
+          p.contacts__label Address
+          a.contacts__value(
+            href=siteData.addressUrl,
+            target='_blank',
+            rel='noopener noreferrer'
+          )
+            | 400 First Ave.
+            br
+            | Suite 700
+            br
+            | Minneapolis, MN 55401

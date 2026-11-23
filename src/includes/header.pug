@@ -1,20 +1,23 @@
 header.l-header
   .l-container.l-header__inner
-    a.logo.l-header__logo(href='#top' aria-label='Bang & Olufsen — Home')
+    a.logo.l-header__logo(href='#top', aria-label='Bang & Olufsen — Home')
       img.logo__img(
-        src='/src/assets/images/Logo.svg'
-        alt=''
-        width='228'
+        src='/src/assets/images/Logo.svg',
+        alt='',
+        width='228',
         height='24'
       )
 
     .l-header__actions
-      a.phone-link(href=siteData.phoneHref aria-label=`Call us: ${siteData.phoneDisplay}`)
+      a.phone-link(
+        href=siteData.phoneHref,
+        aria-label=`Call us: ${siteData.phoneDisplay}`
+      )
         span.phone-link__number= siteData.phoneDisplay
         span.icon-button
           +icon('phone', 18, 18).icon-button__icon
 
-      a.icon-button.burger(href='#menu' aria-label='Open navigation menu')
+      a.icon-button.burger(href='#menu', aria-label='Open navigation menu')
         span.burger__lines(aria-hidden='true')
           span.burger__line
           span.burger__line

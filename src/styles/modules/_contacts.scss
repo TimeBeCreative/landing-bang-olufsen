@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+.contacts {
+  padding-block: var(--space-section) 64px;
+
+  @include mq('tablet') {
+    padding-bottom: 120px;
+  }
+
+  &__title {
+    margin-bottom: var(--space-title);
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    @include mq('desktop') {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    grid-column: 1 / -1;
+    margin-top: 48px;
+
+    @include mq('tablet') {
+      margin-top: 80px;
+    }
+
+    @include mq('desktop') {
+      grid-column: 8 / -1;
+      margin-top: 0;
+    }
+  }
+
+  &__label {
+    margin-bottom: 8px;
+    font-size: var(--fs-label);
+    line-height: var(--lh-label);
+    color: var(--color-text-muted);
+  }
+
+  &__value {
+    font-size: var(--fs-text);
+    line-height: var(--lh-text);
+    color: var(--color-text-contact);
+    transition: color var(--duration) var(--easing);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__submit {
+    margin-top: 16px;
+  }
+}

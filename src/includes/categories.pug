@@ -1,0 +1,40 @@
+section#categories.categories
+  .l-container
+    h2.section-title.categories__title
+      | Sound. Vision.
+      br
+      | It’s your pick.
+
+    .categories__list
+      each cat in siteData.categories
+        article.category.categories__item
+          .l-grid.category__media
+            each photo, idx in cat.items
+              - const isNarrow = cat.reverse ? idx === 0 : idx === 1;
+              .category__photo(
+                class=isNarrow ? 'category__photo--narrow' : 'category__photo--wide'
+              )
+                picture
+                  source(
+                    type='image/avif',
+                    srcset=`/src/assets/images/${photo.image}-400.avif 400w, /src/assets/images/${photo.image}-800.avif 800w`,
+                    sizes=isNarrow ? '(min-width: 1260px) 324px, (min-width: 744px) 184px, 130px' : '(min-width: 1260px) 672px, (min-width: 744px) 392px, 130px'
+                  )
+                  source(
+                    type='image/webp',
+                    srcset=`/src/assets/images/${photo.image}-400.webp 400w, /src/assets/images/${photo.image}-800.webp 800w`,
+                    sizes=isNarrow ? '(min-width: 1260px) 324px, (min-width: 744px) 184px, 130px' : '(min-width: 1260px) 672px, (min-width: 744px) 392px, 130px'
+                  )
+                  img.category__img(
+                    src=`/src/assets/images/${photo.image}-800.jpg`,
+                    alt=photo.alt,
+                    width=isNarrow ? '324' : '672',
+                    height='324',
+                    loading='lazy',
+                    decoding='async'
+                  )
+
+          h3.category__title= cat.title
+
+    .l-grid.categories__footer
+      a.button.categories__button(href='#recommended') View all
