@@ -1,14 +1,23 @@
+include ../data/site.pug
+include ../mixins/icon.pug
+
 doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content=siteData.description)
+    link(rel='icon' type='image/svg+xml' href='/favicon.svg')
     block meta
     block title
-      title Bang &amp; Olufsen
+      title= siteData.title
     block styles
-      link(rel='stylesheet', href='/src/styles/main.scss')
+      link(rel='stylesheet' href='/src/styles/main.scss')
 
-  body
+  body#top
+    include ../includes/svg-sprite.pug
+    include ../includes/header.pug
+    include ../includes/menu.pug
+
     main
       block content

@@ -1,0 +1,23 @@
+aside#menu.menu(aria-label='Site navigation')
+  .l-container.menu__inner
+    .menu__top
+      a.logo(href='#top' aria-label='Bang & Olufsen — Home')
+        img.logo__img(
+          src='/src/assets/images/Logo.svg'
+          alt=''
+          width='228'
+          height='24'
+        )
+
+      a.icon-button(href='#top' aria-label='Close navigation menu')
+        +icon('close', 24, 24).icon-button__icon
+
+    nav.nav.menu__nav(aria-label='Main menu')
+      ul.nav__list
+        each item in siteData.nav
+          li.nav__item
+            a.nav__link(href=item.href)= item.label
+
+    .menu__contacts
+      a.menu__phone(href=siteData.phoneHref)= siteData.phoneDisplay
+      a.menu__call-link(href=siteData.phoneHref) Call to order

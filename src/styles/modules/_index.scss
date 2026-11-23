@@ -1,1 +1,7 @@
-// Один BEM-блок = один partial. Додавай по мірі появи: @forward 'button';
+@forward 'logo';
+@forward 'icon-button';
+@forward 'burger';
+@forward 'phone-link';
+@forward 'nav';
+@forward 'menu';
+@forward 'hero';

@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  &__img {
+    width: auto;
+    height: 16px;
+
+    @include mq('tablet') {
+      height: 24px;
+    }
+  }
+}

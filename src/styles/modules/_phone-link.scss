@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-phone);
+
+  &__number {
+    display: none;
+    font-size: var(--fs-phone);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-phone);
+    letter-spacing: var(--ls-phone);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(8px);
+    transition:
+      opacity var(--duration) var(--easing),
+      transform var(--duration) var(--easing);
+
+    @include mq('desktop') {
+      display: inline-block;
+    }
+  }
+
+  &:hover &__number,
+  &:focus-visible &__number {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

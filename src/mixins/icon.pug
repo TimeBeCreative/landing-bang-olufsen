@@ -1,0 +1,8 @@
+mixin icon(name, width = 24, height = 24)
+  svg(
+    width=width
+    height=height
+    aria-hidden='true'
+    focusable='false'
+  )&attributes(attributes)
+    use(href=`#icon-${name}`)

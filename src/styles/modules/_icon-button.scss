@@ -1,0 +1,22 @@
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--color-text);
+  transition: transform var(--duration) var(--easing);
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}

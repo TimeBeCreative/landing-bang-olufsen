@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+.hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: var(--hero-height);
+    overflow: hidden;
+    &__media {
+        position: absolute;
+        inset: 0;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        @include mq('desktop') {
+            object-position: center center;
+        }
+    }
+    &__container {
+        position: relative;
+        z-index: 1;
+        padding-bottom: var(--hero-offset);
+    }
+    &__title {
+        grid-column: 1 / -1;
+        font-size: var(--fs-hero);
+        font-weight: var(--fw-bold);
+        line-height: var(--lh-hero);
+        color: var(--color-text-inverse);
+        @include mq('desktop') {
+            grid-column: 1 / 7;
+        }
+    }
+}
