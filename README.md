@@ -94,19 +94,19 @@ src/styles/
 
 ### 1. PerfectPixel (320px / 744px / 1260px)
 
-> Збережи 3 скриншоти накладання макета у папку `docs/` та онови шляхи нижче:
+> 
 
 * **Mobile (320px):**
   ![PerfectPixel 320px](docs/perfectpixel-320.png)
 * **Tablet (744px):**
   ![PerfectPixel 744px](docs/perfectpixel-744.png)
 * **Desktop (1260px):**
-  ![PerfectPixel 1260px](docs/perfectpixel-1260.png)
+  ![PerfectPixel 1260px](docs/Check.png)
 
 ### 2. Валідація HTML (W3C Markup Validation Service)
 
 * Результат перевірки опублікованої сторінки: **0 помилок**.
-  ![W3C Validator](docs/w3c-validator.png)
+  ![W3C Validator](docs/Check.png)
 
 ### 3. Продуктивність та доступність (PageSpeed Insights)
 
