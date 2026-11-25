@@ -101,7 +101,7 @@ src/styles/
 * **Tablet (744px):**
   ![PerfectPixel 744px](docs/perfectpixel-744.png)
 * **Desktop (1260px):**
-  ![PerfectPixel 1260px](docs/Check.png)
+  ![PerfectPixel 1260px](docs/perfectpixel-744.png)
 
 ### 2. Валідація HTML (W3C Markup Validation Service)
 
